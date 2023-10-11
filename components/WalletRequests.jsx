@@ -5,6 +5,7 @@ const WalletWithdrawalRequest = () => {
   const [withdrawalRequests, setWithdrawalRequests] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isAproving , setIsAproving] = useState(false)
+  const [isRejecting , setIsRejecting] = useState(false)
   useEffect(() => {
     async function fetchWithdrawalRequests() {
       try {
@@ -67,7 +68,7 @@ const WalletWithdrawalRequest = () => {
 
   const handleReject = async (requestId) => {
     try {
-      setIsLoading(true);
+      setIsRejecting(true)
   
       const response = await fetch(
         `https://digiiearn-api.vercel.app/api/wallet/request/${requestId}`,
@@ -88,8 +89,8 @@ const WalletWithdrawalRequest = () => {
     } catch (error) {
       console.error('Error rejecting withdrawal request:', error);
     } finally {
-      setIsLoading(false);
-      window.location.reload();
+      setIsRejecting(false)
+      // window.location.reload();
     }
   };
   
@@ -128,13 +129,13 @@ const WalletWithdrawalRequest = () => {
                       className="btn btn-sm btn-success"
                       onClick={() => handleApprove(request.request._id , request.request.amount ,request.user.email  , request.user._id)}
                     >
-                      Approve
+                       {isAproving ? 'Approving...' : 'Approve'}
                     </button>
                     <button
                       className="btn btn-sm btn-error"
                       onClick={() => handleReject(request.request._id)}
                     >
-                      Reject
+                       {isRejecting ? 'Rejecting...' : 'Reject'}
                     </button>
                   </div>
                 </td>
