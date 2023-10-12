@@ -16,6 +16,11 @@ const Navbar = () => {
               Course
             </a>
           </div>
+          <div>
+            <a href="/" className="text-white font-bold text-lg hover:underline ml-8">
+              Home
+            </a>
+          </div>
         </div>
       </header>
     </div>
