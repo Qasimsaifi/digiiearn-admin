@@ -7,7 +7,7 @@ const Leaderboard = () => {
   useEffect(() => {
     async function fetchLeaderboard() {
       try {
-        const response = await fetch('http://localhost:5001/api/earnings/leader'); // Create an API route for this
+        const response = await fetch('https://digiiearn-api.onrender.com/api/earnings/leader'); // Create an API route for this
         if (response.ok) {
           const data = await response.json();
           setLeaderboardData(data);
