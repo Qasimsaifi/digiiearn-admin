@@ -77,7 +77,7 @@ const CoursePurchaseRequest = () => {
       };
 
       const response = await fetch(
-        "https://digiiearn-api.vercel.app/api/course/mapping",
+        "https://digiiearn-api.onrender.com/api/course/mapping",
         {
           method: "POST",
           headers: {
