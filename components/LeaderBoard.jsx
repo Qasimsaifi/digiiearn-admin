@@ -8,7 +8,7 @@ const Leaderboard = () => {
   useEffect(() => {
     async function fetchLeaderboard() {
       try {
-        const response = await fetch('https://digiiearn-api.onrender.com/api/earnings/leader', {
+        const response = await fetch('https://digiiearn-api.kasimsaifi.tech//api/earnings/leader', {
           cache: "no-cache"
         });
 

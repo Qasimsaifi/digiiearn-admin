@@ -10,7 +10,7 @@ const CoursePurchaseRequest = () => {
     async function fetchCourseRequests() {
       try {
         const response = await fetch(
-          "https://digiiearn-api.onrender.com/api/course/request"
+          "https://digiiearn-api.kasimsaifi.tech//api/course/request"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch data");
@@ -32,7 +32,7 @@ const CoursePurchaseRequest = () => {
     try {
       // Make an API call to delete the rejected request
       const response = await fetch(
-        `https://digiiearn-api.onrender.com/api/course/request/${requestId}`,
+        `https://digiiearn-api.kasimsaifi.tech//api/course/request/${requestId}`,
         {
           method: "DELETE",
         }
@@ -77,7 +77,7 @@ const CoursePurchaseRequest = () => {
       };
 
       const response = await fetch(
-        "https://digiiearn-api.onrender.com/api/course/mapping",
+        "https://digiiearn-api.kasimsaifi.tech//api/course/mapping",
         {
           method: "POST",
           headers: {

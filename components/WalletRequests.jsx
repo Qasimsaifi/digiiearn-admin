@@ -10,7 +10,7 @@ const WalletWithdrawalRequest = () => {
     async function fetchWithdrawalRequests() {
       try {
         const response = await fetch(
-          "https://digiiearn-api.onrender.com/api/wallet/request/all"
+          "https://digiiearn-api.kasimsaifi.tech//api/wallet/request/all"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch data");
@@ -33,7 +33,7 @@ const WalletWithdrawalRequest = () => {
     try {
       setIsAproving(true)
       const response = await fetch(
-        `https://digiiearn-api.onrender.com/api/wallet/request/${requestId}`,
+        `https://digiiearn-api.kasimsaifi.tech//api/wallet/request/${requestId}`,
         {
           method: 'PUT',
           headers: {
@@ -71,7 +71,7 @@ const WalletWithdrawalRequest = () => {
       setIsRejecting(true)
   
       const response = await fetch(
-        `https://digiiearn-api.onrender.com/api/wallet/request/${requestId}`,
+        `https://digiiearn-api.kasimsaifi.tech//api/wallet/request/${requestId}`,
         {
           method: 'DELETE',
         }
